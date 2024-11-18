@@ -124,3 +124,22 @@ class Vehicule{
 ##Dans le domaine de l'industrie et plus généralement de la recherche et développement (R&D), un prototype est selon la définition de l'OCDE « un modèle original qui possède toutes les qualités techniques et toutes les caractéristiques de fonctionnement d'un nouveau produit. (...) »1[réf. incomplète], mais il s'agit aussi parfois d'un exemplaire incomplet (et non définitif) de ce que pourra être un produit (éventuellement de type logiciel2,3, ou de type « service »4) ou un objet matériel final.
 
 Le prototype matérialise une étape d'évolution d'un projet, souvent pour démontrer ou infirmer le bien-fondé d'un ou plusieurs concept(s) mis en jeu dans ce projet, avant toute valorisation commerciale.
+
+
+class Person{
+  name
+  age
+
+  constructor(name,age){
+    this.name = name
+    this.age = age
+  }
+}
+
+Person.prototype.Saluer = function(){
+  console.log(`Hello my name is ${this.name} and i am ${this.age}`)
+}
+
+var user = new Person('Rahme',22)
+
+user.Saluer()
