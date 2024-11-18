@@ -1,0 +1,126 @@
+// L'encapsulation
+
+##L’encapsulation est un mécanisme consistant à rassembler les données et les méthodes au sein d’une structure en cachant l’implémentation de l’objet, c’est-à-dire en empêchant l’accès aux données par un autre moyen que les services proposés.
+
+class Person {
+    #name
+    #age
+    constructor(name, age) {
+      this.#name = name
+      this.#age = age
+    }
+  
+    getName = () => console.log(this.#name)
+    getAge=()=> console.log(this.#age)  
+  
+    setName=(a)=> this.#name = a 
+    setAge=(a)=> this.#age = a  
+  
+  }
+  
+  var user = new Person("Hadir", 99)
+  
+  // console.log(user.name)
+  user.getName()
+  user.getAge()
+  user.setName('Yesser')
+  user.getName()
+  user.setAge(9)
+  user.getAge()
+
+
+  function Person(name,age){
+    let myName = name
+    let myAge = age 
+  
+    this.getName=()=> console.log(myName)
+    this.getAge=()=> console.log(myAge)
+  }
+  
+  var user = new Person('Rania',22)
+  
+  user.getName()
+  user.getAge()
+
+//   L'héritage
+
+##"Abolition du droit d'héritage. - Tant que ce droit existera la différence héréditaire des classes, des positions, des fortunes, l'inégalité sociale en un mot et le privilège subsisteront sinon en droit, du moins en fait. Mais l'inégalité de fait, par une loi inhérente à la société, produit toujours l'inégalité des droits : l'inégalité sociale devient nécessairement inégalité politique.
+
+class Animal{
+    name
+    age
+  
+    constructor(name,age){
+      this.name = name
+      this.age = age
+    }
+  
+    makeSound=()=> console.log('grrrrr')
+  }
+  
+  class Dog extends Animal{
+    pattes
+  
+    constructor(name,age,pattes){
+      super(name,age)
+  
+      this.pattes = pattes
+    }
+  }
+  
+  var kalb = new Dog('Hamdi',10,900)
+  
+  
+  
+  kalb.makeSound()
+
+// Polymorphisme
+
+##Le polymorphisme est le caractère de ce qui peut avoir ou adopter plusieurs formes différentes12. Le terme peut s'appliquer à différents domaines, comme la biologie, la chimie, la géologie ou l'informatique. En informatique, le polymorphisme désigne la capacité à se présenter sous une unique interface pour plusieurs types de données3. Par exemple, les opérations arithmétiques sont polymorphes car elles peuvent s'appliquer à des entiers, des flottants ou des doubles. Le polymorphisme est aussi appelé polymorphie
+
+class Vehicule{
+    pneu
+    puissance
+  
+    constructor(pneu,puissance){
+      this.pneu = pneu
+      this.puissance = puissance
+    }
+  
+    vehiculeSound=()=> console.log("vromvrom")
+  }
+  
+  class car extends Vehicule{
+    toit
+  
+    constructor(pneu,puissance,toit){
+      super(pneu,puissance)
+      this.toit = toit
+    }
+  
+    vehiculeSound=()=> console.log('vinvin')
+  }
+  
+  class Lorry extends Vehicule{
+  
+    quantity
+  
+    constructor(pneu,puissance,quantity){
+      super(pneu,puissance)
+      this.quantity = quantity
+    }
+    
+  }
+  
+  var karhba = new car(3,4,true)
+  
+  var kamyoun = new Lorry(4,9,70)
+  
+  karhba.vehiculeSound()
+  kamyoun.vehiculeSound()
+  
+//   Protoype  
+
+##Dans le domaine de l'industrie et plus généralement de la recherche et développement (R&D), un prototype est selon la définition de l'OCDE « un modèle original qui possède toutes les qualités techniques et toutes les caractéristiques de fonctionnement d'un nouveau produit. (...) »1[réf. incomplète], mais il s'agit aussi parfois d'un exemplaire incomplet (et non définitif) de ce que pourra être un produit (éventuellement de type logiciel2,3, ou de type « service »4) ou un objet matériel final.
+
+Le prototype matérialise une étape d'évolution d'un projet, souvent pour démontrer ou infirmer le bien-fondé d'un ou plusieurs concept(s) mis en jeu dans ce projet, avant toute valorisation commerciale.
